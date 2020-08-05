@@ -31,11 +31,11 @@ for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
 		tweet.retweet()
 		print("tweet retweet")
 
-		time.sleep(10)
+		time.sleep(5)
 
 		tweet.favorite()
 		print("tweet liked")
-		time.sleep(10)
+		time.sleep(36)
 
 
 	except tweepy.TweepError as e:
