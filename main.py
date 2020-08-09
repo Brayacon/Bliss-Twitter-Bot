@@ -54,18 +54,18 @@ def like_n_retweet():
 			# print(search) 
 			# Reply
 			reply_to_tweets(tweet.user.screen_name, tweet.id)
-			time.sleep(5)
+			time.sleep(34)
 
 
 			#like
 			tweet.favorite()
 			print("liked")
-			time.sleep(5)
+			time.sleep(35)
 
 			#retweet
 			tweet.retweet()
 			print("retweeted")
-			time.sleep(100)
+			time.sleep(200)
 
 			
 
