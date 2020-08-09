@@ -1,28 +1,28 @@
 import tweepy 
 import time
 import os
-import config
+# import config
 from os import environ
 
 
-#Cloud Deploy
-#Access token & access token secret
-# ACCESS_KEY = environ['ACCESS_KEY']
-# ACCESS_SECRET = environ['ACCESS_SECRET']
+# Cloud Deploy
+Access token & access token secret
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
 
-# #Consumer API keys
-# CONSUMER_KEY =  environ['CONSUMER_KEY']
-# CONSUMER_SECRET = environ['CONSUMER_SECRET']
+#Consumer API keys
+CONSUMER_KEY =  environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
 
-# auth = tweepy.OAuthHandler(CONSUMER_KEY,CONSUMER_SECRET)
-# auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
-
-
+auth = tweepy.OAuthHandler(CONSUMER_KEY,CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 
 
-# Local Host 
-auth = tweepy.OAuthHandler(config.CONSUMER_KEY, config.CONSUMER_SECRET)
-auth.set_access_token(config.ACCESS_KEY, config.ACCESS_SECRET)
+
+
+# # Local Host 
+# auth = tweepy.OAuthHandler(config.CONSUMER_KEY, config.CONSUMER_SECRET)
+# auth.set_access_token(config.ACCESS_KEY, config.ACCESS_SECRET)
 
 
 
