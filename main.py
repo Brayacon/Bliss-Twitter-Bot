@@ -6,7 +6,7 @@ from os import environ
 
 
 # Cloud Deploy
-Access token & access token secret
+# Access token & access token secret
 ACCESS_KEY = environ['ACCESS_KEY']
 ACCESS_SECRET = environ['ACCESS_SECRET']
 
