@@ -40,6 +40,7 @@ nrTweets = 500 #number of tweets you wanna pull back
 FILE_NAME = 'last_seen_id.txt'
  
 def ChangeSearch(i):
+	search = get_trend()
 	my_tags = ['GeeksyR', 'GeeksyNerd', 'brad_yalo']
 	return my_tags[i]
 
@@ -50,7 +51,7 @@ def like_n_retweet():
 
 	for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
 		try:
-			print(search) 
+			# print(search) 
 			# Reply
 			reply_to_tweets(tweet.user.screen_name, tweet.id)
 			time.sleep(5)
@@ -64,9 +65,9 @@ def like_n_retweet():
 			#retweet
 			tweet.retweet()
 			print("retweeted")
-			time.sleep(40)
+			time.sleep(100)
 
-			search = get_trend()
+			
 
 
 		except tweepy.TweepError as e:
