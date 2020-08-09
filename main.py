@@ -39,14 +39,18 @@ nrTweets = 500 #number of tweets you wanna pull back
 
 FILE_NAME = 'last_seen_id.txt'
  
-
+def ChangeSearch(i):
+	my_tags = ['GeeksyR', 'GeeksyNerd', 'brad_yalo']
+	return my_tags[i]
 
 
 
 def like_n_retweet():
+	my_tags = ['GeeksyR', 'GeeksyNerd', 'brad_yalo',]
+
 	for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
 		try:
-
+			print(search) 
 			# Reply
 			reply_to_tweets(tweet.user.screen_name, tweet.id)
 			time.sleep(5)
@@ -60,7 +64,9 @@ def like_n_retweet():
 			#retweet
 			tweet.retweet()
 			print("retweeted")
-			time.sleep(50)
+			time.sleep(40)
+
+			search = get_trend()
 
 
 		except tweepy.TweepError as e:
@@ -83,6 +89,20 @@ def get_trends():
 	# put all the names together with a ' ' separating them
 	trendsName = ' '.join(names)
 	print(name)
+
+
+def get_trend():
+	trends1 = api.trends_place(1) # from the end of your code
+	# trends1 is a list with only one element in it, which is a 
+	# dict which we'll put in data.
+	data = trends1[0] 
+	# grab the trends
+	trends = data['trends']
+ 	# grab the name from each trend
+	names = [trend['name'] for trend in trends]
+	# put all the names together with a ' ' separating them
+	trendsName = ' '.join(names)
+	print(names[0])
 
 
 def tweet_reply(file_name):
