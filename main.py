@@ -158,7 +158,7 @@ def store_last_seen_id(last_seen_id, file_name):
 def reply_to_tweets(screen_name, tweet_id):
 	print(screen_name)
 	print('retrieving and replying to tweets', flush = True)
-	api.update_status('@'+ screen_name +' '+ 'Hey Please follow me for daily retweets and likes \n FOLLOW  @GeeksyR too. \n Use #GeeksyNerd for likes and retweets ', tweet_id)
+	api.update_status('@'+ screen_name +' '+ 'Hey Please follow me for daily retweets and likes \n FOLLOW  @GeeksyR too. \n Use #GeeksyNerd or #Kenya for likes and retweets ', tweet_id)
 
 
 
