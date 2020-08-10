@@ -2,6 +2,7 @@ import tweepy
 import time
 import os
 # import config
+import random
 from os import environ
 
 
@@ -51,21 +52,25 @@ def like_n_retweet():
 
 	for tweet in tweepy.Cursor(api.search, search).items(nrTweets):
 		try:
+			
+			nxt_tweet=random.randint(150,200)
+			nxt_like=random.randint(40,60)
+			nxt_reply=random.randint(35,60)
 			# print(search) 
 			# Reply
 			reply_to_tweets(tweet.user.screen_name, tweet.id)
-			time.sleep(34)
+			time.sleep(nxt_reply)
 
 
 			#like
 			tweet.favorite()
 			print("liked")
-			time.sleep(35)
+			time.sleep(nxt_like)
 
 			#retweet
 			tweet.retweet()
 			print("retweeted")
-			time.sleep(200)
+			time.sleep(nxt_tweet)
 
 			
 
